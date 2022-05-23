@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- <link rel="stylesheet" href="/static/css/styles.css"> -->
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-primary justify-content-between">
+        <div class="container">
+            <a href="/" class="navbar-brand text-light">Todo App</a>
+            <ul class="nav navbar-nav flex-row float-right">
+                <li class="nav-item">
+                    <a href="" class="nav-link pr-3 text-light">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link text-light">Sign up</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        {% for msg in get_flashed_messages() %}
+        <div class="alert alert-danger">{{ msg }}</div>
+        {% endfor %}
+
+        {% block content %}
+        {% endblock %}
+    </div>
+
+
+    <!-- partial -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+</body>
+
+</html>

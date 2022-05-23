@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+
+body {
+    background: rgb(108, 148, 146) !important;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+}
+
+.height {
+    min-height: 100vh;
+}
+
+.form-signin {
+    background: white;
+    padding: 50px 80px;
+    min-height: 620px;
+}
+
+.logo {
+    width: 200px;
+}
+
+.one-line {
+    display: flex;
+}
+
+.forgot {
+    margin-left: auto;
+}
+
+@media only screen and (max-width: 576px) {
+    .form-signin {
+        min-width: 360px;
+        flex-wrap: wrap;
+        padding: 50px 0px;
+    }
+
+}
+
+/* not active */
+.nav-pills .pill-1 .nav-link:not(.active) {
+    border: none;
+    color: #6c757d !important;
+    font-weight: 700;
+    width: 0%;
+    transition: width 0.4s;
+}
+
+.nav-pills .pill-2 .nav-link:not(.active) {
+    border: none;
+    color: #6c757d !important;
+    font-weight: 700;
+    width: 0%;
+    transition: width 0.4s;
+}
+
+
+/* active (faded) */
+.nav-pills .pill-1 .nav-link {
+    background: white !important;
+    border-bottom: 2px solid #007bff;
+    color: #212529 !important;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-pills .pill-2 .nav-link {
+    background: white !important;
+    border-bottom: 2px solid #007bff;
+    color: #212529 !important;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-pills .pill-1 .nav-link:hover {
+    color: #212529 !important;
+    width: 100%;
+    border-bottom: 2px solid #007bff;
+
+}
+
+.nav-pills .pill-2 .nav-link:hover {
+    color: #212529 !important;
+    width: 100%;
+    border-bottom: 2px solid #007bff;
+}
+
+
+.nav {
+    padding: 0 15px !important;
+}
