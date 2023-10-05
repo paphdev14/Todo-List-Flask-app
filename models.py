@@ -55,6 +55,15 @@ class User(db.Model):
     last_name = db.Column(db.String(30), nullable=False)
     
 
+    # TODO: sign_up and register would live better in a utils file
+    #   Instead of in the User model directly
+
+    # TODO: You attach those function to the class instead of the object
+    #   because when we are signing up the user instance is still not created
+    #   I think i would split the logic here
+    #   - set_password (encode password based on provided string)
+    #   - save (save user)
+
     @classmethod
     def sign_up(cls, username, pwd, first_name, last_name):
         '''Register user w/hashed password & return user'''
@@ -67,8 +76,15 @@ class User(db.Model):
         # db.session.add(user_info)
         return user_info
 
+
+    # TODO: Did you look if flask contains already a authentication system?
+    #   For me authenticate, should only authenticate and not try
+    #   to find the user at the same time
+    #   We can keep like this, I also understand why it can be useful that way
+    #   We pass the credentials and then the function does the job for us
     @classmethod
     def authenticate(cls, username, pwd):
+        # TODO: Use double quotes instead of single quotes here
         '''
         validate if user exists and password is correct
         Return user if valid; else return false

@@ -7,7 +7,7 @@
 <h1>Edit Todo</h1>
 
 <form method="POST" action="/todo/{{ todo.id }}/update">
-
+    <!-- TODO: {{ form.hidden_tag() }}-->
     {{form.hidden_tag()}}
 
     {% for field in form.errors %}
@@ -21,14 +21,14 @@
     {% endfor %}
 
     {% for field in form if field.widget.input_type != 'hidden' %}
-
+    <!-- TODO: Delete empty line to keep for within the block-->
     <div class="form-group row">
         {{field.label(class="col-sm-2 col-form-label")}}
         <div class="col-sm-10">
             {{field(class="form-control")}}
         </div>
     </div>
-
+    <!-- TODO: Delete empty line-->
     {% endfor %}
 
     <button class="btn btn-primary">Edit!</button>

@@ -191,9 +191,13 @@ def delete_todo(todo_id):
     """Delete todo."""
 
     todo = ToDO.query.get(todo_id)
+
+    # TODO: Any other way to protect the view from unauthorised access?
+    #   Have you looked at flask-login?
     if "username" not in session or todo.username != session['username']:
         raise Unauthorized()
 
+    # TODO: Is this needed? Could you tell me more about it?
     form = DeleteForm()
 
     if form.validate_on_submit():
