@@ -1,8 +1,13 @@
 {{ form.hidden_tag() }}
 
+<!-- TODO: Why do you need if field.widget.input_type != 'hidden'? -->
+<!-- TODO: If you have hidden fields they will be invisible but still present in the form -->
+
 {% for field in form
 if field.widget.input_type != 'hidden' %}
 
+<!-- TODO: Why do you need this p tag here. Is that only to go a new line for each field? --
+>
 <p>
     {{ field.label }}
     {{ field(class_="form-control") }}

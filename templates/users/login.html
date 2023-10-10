@@ -4,6 +4,8 @@
 
 {% block content %}
 <h1 class="display-2">Login</h1>
+<!-- TODO: You can use url_for instead of putting directly the url -->
+<!-- TODO: Like that if you change the url in the view definition, it will not break all harcoded links -->
 <p class="lead">Please login. Don't have an account? <a href="/signup">Register here</a></p>
 <form id="user-add-form" method="POST">
     {% include "users/_form.html" %}
